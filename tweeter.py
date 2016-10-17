@@ -14,4 +14,5 @@ while True:
 	fresh_tracks = scrapper.query()
 	for track in fresh_tracks:
 		client.statuses.update(status=track)
+		print "querying!!!"
 	time.sleep(3600)
