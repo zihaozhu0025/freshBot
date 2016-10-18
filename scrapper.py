@@ -6,9 +6,9 @@ subreddit = r.get_subreddit("hiphopheads")
 def query():
 	fresh_tracks = []
 	for submission in subreddit.get_hot(limit=20):
-		if re.search('\[FRESH]', submission.title):
+		if re.search('\[FRESH( .*)?\]', submission.title):
 			fresh_tracks=fresh_tracks + [(submission.title, submission.permalink)]
 	return fresh_tracks
 l=query()
 for song in l:
-		print song
+		print song[0]
